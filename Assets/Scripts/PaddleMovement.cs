@@ -17,11 +17,12 @@ public class PaddleMovement : MonoBehaviour
 
     public ScoreTally scoreTally;
     public ScoreReduction scoreReduction;
+    public PuckMovement1 puckMovement1;
     
     public int hitCounterWan = 0;
     public float resetTime = 5f;
 
-    bool hasScored1 = false;
+    bool hasScoredWan = false;
 
     void Start()
     {
@@ -56,7 +57,7 @@ public class PaddleMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Puck"))
         { 
-            if(!hasScored1)
+            if(!hasScoredWan)
             {
                 hitCounterWan++;
 
@@ -64,7 +65,7 @@ public class PaddleMovement : MonoBehaviour
                 {
                     ReducePoints();
                     Invoke("ResetCounter", resetTime);
-                    hasScored1 = true;
+                    hasScoredWan = true;
                 }
  
             } 
@@ -74,7 +75,8 @@ public class PaddleMovement : MonoBehaviour
     void ResetCounter()
     {
         hitCounterWan = 0;
-        hasScored1 = false;
+        hasScoredWan = false;
+        //puckMovement1.playerWanStart = true || false;
     }
     
     void ReducePoints()

@@ -18,7 +18,7 @@ public class AIMovement : MonoBehaviour
     public float minY;
     public float maxY;
 
-    public PuckMovement1 puckMovement;
+    public PuckMovement1 puckMovement1;
     public ScoreTally scoreTally;
     public ScoreReduction scoreReduction;
 
@@ -55,6 +55,7 @@ public class AIMovement : MonoBehaviour
     {
         hitCounterToo = 0;
         hasScored2 = false;
+        //puckMovement1.playerWanStart = true || false;
     }
 
     void ReductionPoints()

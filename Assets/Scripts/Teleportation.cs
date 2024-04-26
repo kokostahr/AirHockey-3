@@ -29,7 +29,7 @@ public class Teleportation : MonoBehaviour
             puck.transform.position = TeleporterR.transform.position;
 
             GameObject.Find("Portals").GetComponent<SpawnPortal>().Start();
-            //Destroy(this.gameObject, 2f);
+            Destroy(this.gameObject, 10f);
 
             //Invoke("spawnPortal.SpawnNewPortal", 30f);
             //GameObject.Find("Portals").GetComponent<SpawnPortal>().SpawnNewPortal();
