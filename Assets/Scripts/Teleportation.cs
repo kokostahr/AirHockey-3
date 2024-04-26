@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Teleportation : MonoBehaviour
 {
-    public bool isTeleporterL; //Will be false for RTeleporter
+    //public bool isTeleporterL; //Will be false for RTeleporter
     public Transform TeleporterR;
 
+    bool teleportToR = false;
     public SpawnPortal spawnPortal;
 
     GameObject puck;
@@ -20,30 +21,50 @@ public class Teleportation : MonoBehaviour
         }
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Puck"))
+        {
+            teleportToR = !teleportToR; 
+        }
+    }
+
     void Teleport(GameObject puck)
     {
-        //Teleport the puck to the other teleporter
-        if (isTeleporterL)
+
+        if (teleportToR)
         {
-           
-            puck.transform.position = TeleporterR.transform.position;
-
-            GameObject.Find("Portals").GetComponent<SpawnPortal>().Start();
-            Destroy(this.gameObject, 10f);
-
-            //Invoke("spawnPortal.SpawnNewPortal", 30f);
-            //GameObject.Find("Portals").GetComponent<SpawnPortal>().SpawnNewPortal();
-           
+            puck.transform.position = TeleporterR.position;
         }
-        else if (!isTeleporterL)
+        else
         {
             puck.transform.position = transform.position;
         }
 
-       // Invoke("spawnPortal.SpawnNewPortal", 5f);
-       // Destroy(this.gameObject, 15f);
 
-        
+
+        /*  //Teleport the puck to the other teleporter
+          if (isTeleporterL)
+          {
+
+              puck.transform.position = TeleporterR.transform.position;
+
+              GameObject.Find("Portals").GetComponent<SpawnPortal>().Start();
+              Destroy(this.gameObject, 10f);
+
+              //Invoke("spawnPortal.SpawnNewPortal", 30f);
+              //GameObject.Find("Portals").GetComponent<SpawnPortal>().SpawnNewPortal();
+
+          }
+          else if (!isTeleporterL)
+          {
+              puck.transform.position = transform.position;
+          }*/
+
+        // Invoke("spawnPortal.SpawnNewPortal", 5f);
+        // Destroy(this.gameObject, 15f);
+
+
         //GameObject.Find("Portals").GetComponent<SpawnPortal>().SpawnNewPortal();
     }
 

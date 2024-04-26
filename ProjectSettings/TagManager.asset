@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Point
   - Barrier
-  - Bonus
   - Playerwan
   - Playertoo
   - Puck
@@ -14,6 +13,8 @@ TagManager:
   - Portal L
   - Portal R
   - Teleporter
+  - TeleporterR
+  - TeleporterL
   layers:
   - Default
   - TransparentFX
