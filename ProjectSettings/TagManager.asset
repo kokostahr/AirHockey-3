@@ -11,6 +11,9 @@ TagManager:
   - Playertoo
   - Puck
   - Right
+  - Portal L
+  - Portal R
+  - Teleporter
   layers:
   - Default
   - TransparentFX

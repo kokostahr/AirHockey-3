@@ -18,7 +18,7 @@ public class AIMovement : MonoBehaviour
     public float minY;
     public float maxY;
 
-    public PuckMovement puckMovement;
+    public PuckMovement1 puckMovement;
     public ScoreTally scoreTally;
     public ScoreReduction scoreReduction;
 

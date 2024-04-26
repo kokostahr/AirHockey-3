@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bounciness : MonoBehaviour
 {
     //Referencing my previous PuckMovement script incase I want to do any cool features that increase the speed, relating to how the puck bounces around
-    public PuckMovement puckMovement;
+    public PuckMovement1 puckMovement;
     //Referencing my new ScoreTally script
     public ScoreTally scoreTally;
     //public float hitRestrict = 1;
